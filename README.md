@@ -2,7 +2,7 @@
 
 A modern, AI-powered financial management web application built with **Next.js 15**, featuring intelligent categorization, real-time analytics, and personalized financial insights.
 
-![ExpenseTracker AI](https://img.shields.io/badge/Next.js-15.3.5-black?style=for-the-badge&logo=next.js)
+![FinancePulse AI](https://img.shields.io/badge/Next.js-15.3.5-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.0.0-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css)
@@ -73,8 +73,8 @@ A modern, AI-powered financial management web application built with **Next.js 1
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/sahandghavidel/next-expense-tracker-ai.git
-   cd next-expense-tracker-ai
+   git clone https://github.com/FaizzE/financepulse-ai.git
+   cd financepulse-ai
    ```
 
 2. **Install dependencies**
