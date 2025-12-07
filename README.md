@@ -1,8 +1,8 @@
 # 💰 FinancePulse AI
 
-A modern, AI-powered financial management web application built with **Next.js 15**, featuring intelligent categorization, real-time analytics, and personalized financial insights.
+A modern, AI-powered financial management web application built with **Next.js 16**, featuring intelligent categorization, real-time analytics, and personalized financial insights.
 
-![FinancePulse AI](https://img.shields.io/badge/Next.js-15.3.5-black?style=for-the-badge&logo=next.js)
+![FinancePulse AI](https://img.shields.io/badge/16.0.7-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.0.0-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css)
@@ -39,7 +39,7 @@ A modern, AI-powered financial management web application built with **Next.js 1
 
 ### Frontend
 
-- **[Next.js 15](https://nextjs.org)** - React framework with App Router
+- **[Next.js 16](https://nextjs.org)** - React framework with App Router
 - **[React 19](https://react.dev)** - Latest React with concurrent features
 - **[TypeScript](https://typescriptlang.org)** - Type-safe development
 - **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
