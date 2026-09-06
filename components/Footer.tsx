@@ -1,110 +1,132 @@
-import Link from 'next/link';
+'use client'
 
-const Footer = () => {
+import { useState } from 'react'
+import Link from 'next/link'
+
+export default function Footer () {
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email.trim()) {
+      setSubscribed(true)
+      setEmail('')
+    }
+  }
+
   return (
-    <footer className='relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20 border-t border-gray-100/50 dark:border-gray-700/50'>
-      {/* Gradient accent line */}
-      <div className='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500'></div>
-
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
-          {/* Logo and Tagline */}
-          <div className='text-center md:text-left'>
-            <div className='inline-flex items-center gap-2 mb-4'>
-              <div className='w-8 h-8 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg'>
-                <span className='text-white text-lg'>💰</span>
-              </div>
-              <h2 className='text-xl font-bold bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent'>
-                FinancePulse AI
-              </h2>
-            </div>
-            <p className='text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm'>
-              Intelligent financial management powered by AI. Track your
-              expenses, manage your budget, and gain insights into your spending
-              patterns.
-            </p>
-          </div>
-
-          {/* Navigation Links */}
-          <div className='text-center md:text-left'>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4'>
-              Quick Links
-            </h3>
-            <div className='flex flex-col space-y-3'>
-              <Link
-                href='/'
-                className='group inline-flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 text-sm font-medium transition-colors duration-200'
+    <footer className='w-full border-t border-slate-200 bg-white px-6 pt-12 text-sm text-slate-500 md:px-16 lg:px-24 xl:px-32'>
+      <div className='mx-auto grid max-w-6xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3'>
+        {/* Column 1: Brand & Description */}
+        <div className='sm:col-span-2 lg:col-span-1'>
+          <Link
+            href='/'
+            className='inline-flex items-center gap-2 font-semibold tracking-tight'
+          >
+            <span className='grid size-8 place-items-center rounded-xl bg-emerald-600 text-white shadow-sm shadow-emerald-600/20'>
+              <svg
+                className='size-4'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
               >
-                <span className='w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-                Home
-              </Link>
-              <Link
-                href='/about'
-                className='group inline-flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 text-sm font-medium transition-colors duration-200'
-              >
-                <span className='w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-                About
-              </Link>
-              <Link
-                href='/contact'
-                className='group inline-flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 text-sm font-medium transition-colors duration-200'
-              >
-                <span className='w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200'></span>
-                Contact
-              </Link>
-            </div>
-          </div>
+                <path d='m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z' />
+                <path d='M5 3v4' />
+                <path d='M19 17v4' />
+                <path d='M3 5h4' />
+                <path d='M17 19h4' />
+              </svg>
+            </span>
+            <span className='text-xl font-bold tracking-tight text-slate-900'>
+              FinancePulse <span className='text-emerald-600'>AI</span>
+            </span>
+          </Link>
+          <p className='mt-5 max-w-sm text-sm/7 text-slate-600'>
+            Intelligent financial clarity without bank syncing. Turn natural
+            language memos into structured ledgers, audit logs, and actionable
+            spending insights.
+          </p>
+        </div>
 
-          {/* Features */}
-          <div className='text-center md:text-left'>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4'>
-              Features
-            </h3>
-            <div className='space-y-3'>
-              <div className='flex items-center gap-3 text-gray-600 dark:text-gray-400 text-sm'>
-                <div className='w-5 h-5 bg-gradient-to-br from-emerald-500 to-green-500 rounded-md flex items-center justify-center shadow-sm'>
-                  <span className='text-white text-xs'>🤖</span>
-                </div>
-                AI-Powered Insights
-              </div>
-              <div className='flex items-center gap-3 text-gray-600 dark:text-gray-400 text-sm'>
-                <div className='w-5 h-5 bg-gradient-to-br from-green-500 to-teal-500 rounded-md flex items-center justify-center shadow-sm'>
-                  <span className='text-white text-xs'>✨</span>
-                </div>
-                Smart Categorization
-              </div>
-              <div className='flex items-center gap-3 text-gray-600 dark:text-gray-400 text-sm'>
-                <div className='w-5 h-5 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-md flex items-center justify-center shadow-sm'>
-                  <span className='text-white text-xs'>📊</span>
-                </div>
-                Analytics Dashboard
-              </div>
-            </div>
+        {/* Column 2: Navigation Links */}
+        <div className='flex flex-col lg:items-center lg:justify-center'>
+          <div className='flex flex-col space-y-2.5 text-sm'>
+            <h2 className='mb-4 font-semibold text-slate-900'>Company</h2>
+            <Link href='/about' className='transition hover:text-slate-900'>
+              About us
+            </Link>
+            <Link href='/#product' className='transition hover:text-slate-900'>
+              Product Overview
+            </Link>
+            <Link href='/contact' className='transition hover:text-slate-900'>
+              Contact us
+            </Link>
+            <Link
+              href='/#security'
+              className='inline-flex items-center gap-2 transition hover:text-slate-900'
+            >
+              <span>Security</span>
+              <span className='rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800'>
+                Zero Sync
+              </span>
+            </Link>
+            <Link href='/#faq' className='transition hover:text-slate-900'>
+              FAQ
+            </Link>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className='w-full h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent mb-8'></div>
-
-        {/* Copyright and Social */}
-        <div className='flex flex-col md:flex-row justify-between items-center'>
-          <div className='text-center md:text-left mb-4 md:mb-0'>
-            <p className='text-gray-500 dark:text-gray-400 text-sm'>
-              © {new Date().getFullYear()} FinancePulse AI. All rights
-              reserved.
+        {/* Column 3: Newsletter Box */}
+        <div>
+          <h2 className='mb-4 font-semibold text-slate-900'>
+            Subscribe to updates
+          </h2>
+          <div className='max-w-sm space-y-4 text-sm'>
+            <p className='text-slate-600'>
+              The latest platform features, financial breakdowns, and security
+              announcements sent to your inbox.
             </p>
-          </div>
-
-          <div className='flex items-center gap-4'>
-            <div className='inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-medium'>
-              <span className='w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse'></span>
-              Built with ❤️ by Faizul I.
-            </div>
+            {subscribed ? (
+              <div className='rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-xs font-medium text-emerald-800'>
+                ✓ Thank you for subscribing!
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubscribe}
+                className='flex items-center gap-2 rounded-lg bg-emerald-50/80 p-1.5 border border-emerald-100'
+              >
+                <input
+                  type='email'
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder='Enter your email'
+                  required
+                  className='w-full rounded bg-white px-3 py-2 text-sm text-slate-900 outline-none ring-1 ring-slate-200 focus:ring-2 focus:ring-emerald-600 placeholder:text-slate-400'
+                />
+                <button
+                  type='submit'
+                  className='rounded bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-500 cursor-pointer shrink-0'
+                >
+                  Subscribe
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>
-    </footer>
-  );
-};
 
-export default Footer;
+      {/* Bottom Bar */}
+      <div className='mt-10 border-t border-slate-200 py-5 text-center text-xs text-slate-500'>
+        <p>
+          Copyright {new Date().getFullYear()} ©{' '}
+          <span className='font-semibold text-slate-700'>FinancePulse AI</span>.
+          All Rights Reserved. · Engineered by Faizul I.
+        </p>
+      </div>
+    </footer>
+  )
+}
